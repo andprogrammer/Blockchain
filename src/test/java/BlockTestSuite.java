@@ -6,10 +6,11 @@ public class BlockTestSuite {
 
     @Test
     public void testBlock() {
-        int hash = 24832;
-        String transactions = "Mock transactions";
-        Block firstBlock = new Block(hash, transactions);
-        assertEquals(firstBlock.getHash(), hash);
-        assertEquals(firstBlock.getTransactions(), transactions);
+        int previousHash = 10;
+        int expectedHash = 1030871625;
+        String[] transactions = { "Mock transaction 1", "Mock transaction 2" };
+        Block firstBlock = new Block(previousHash, transactions);
+        assertEquals(firstBlock.getPreviousHash(), previousHash);
+        assertEquals(firstBlock.getHash(), expectedHash);
     }
 }
